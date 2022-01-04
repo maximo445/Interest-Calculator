@@ -11,6 +11,12 @@ const monthlyPayment = document.querySelector('#monthly-payment');
 const totalPayment = document.querySelector('#total-payment');
 const totalInterest = document.querySelector('#total-interest');
 
+//delay and results variables
+const bottom = document.querySelector('#bottom');
+const resultsContainer = document.querySelector('#results-container');
+const loadingContainer = document.querySelector('#loading-container');
+
+//logic
 calculateBtn.addEventListener('click', calculate);
 
 function calculate () {
@@ -21,4 +27,16 @@ function calculate () {
     monthlyPayment.innerHTML = `${monthlyPaymentR}`;
     totalPayment.innerHTML = `${totalPaymentR}`;
     totalInterest.innerHTML = `${interestAmountR}`;
+
+    bottom.style.display = 'inline-block';
+    loadingContainer.style.display = 'flex';
+
+    setTimeout(displayResults, 3200);
+}
+
+//delay and results logic
+
+function displayResults () {
+    resultsContainer.style.display = 'flex';
+    loadingContainer.style.display = 'none';
 }

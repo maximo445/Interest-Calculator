@@ -62,24 +62,71 @@ body {
       border-radius: 5px;
       font-size: 1rem; }
   #calculator #bottom {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center; }
-    #calculator #bottom h1 {
-      margin: 20px 0 0 0; }
-    #calculator #bottom .output {
-      width: 100%;
-      color: #333;
-      background: #E3E3E3;
-      margin: 15px 0;
-      padding: 10px;
-      border: 1px solid #333;
-      border-radius: 5px; }
-      #calculator #bottom .output span:first-child {
-        padding: 11px;
-        border-right: 1px solid #333; }
-      #calculator #bottom .output span:nth-child(2) {
-        padding: 11px;
+    display: none;
+    min-height: 260px; }
+    #calculator #bottom #results-container {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%; }
+      #calculator #bottom #results-container h1 {
+        margin: 20px 0 0 0; }
+      #calculator #bottom #results-container .output {
         width: 100%;
-        border: none; }
+        color: #333;
+        background: #E3E3E3;
+        margin: 15px 0;
+        padding: 10px;
+        border: 1px solid #333;
+        border-radius: 5px; }
+        #calculator #bottom #results-container .output span:first-child {
+          padding: 11px;
+          border-right: 1px solid #333; }
+        #calculator #bottom #results-container .output span:nth-child(2) {
+          padding: 11px;
+          width: 100%;
+          border: none; }
+    #calculator #bottom #loading-container {
+      display: none;
+      justify-content: center;
+      align-items: center;
+      min-height: 260px;
+      z-index: 5; }
+      #calculator #bottom #loading-container #loading-icon {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        height: 200px;
+        width: 40px;
+        border: dotted solid #333;
+        list-style: none; }
+        #calculator #bottom #loading-container #loading-icon .element {
+          width: 10px;
+          background: #E3E3E3;
+          border: #333 2px solid;
+          border-radius: 3px; }
+          #calculator #bottom #loading-container #loading-icon .element:nth-child(1) {
+            animation: eleOne 0.6s linear infinite forwards alternate; }
+          #calculator #bottom #loading-container #loading-icon .element:nth-child(2) {
+            animation: eleTwo 0.6s linear infinite forwards alternate; }
+          #calculator #bottom #loading-container #loading-icon .element:nth-child(3) {
+            animation: eleThree 0.6s linear infinite forwards alternate; }
+
+@keyframes eleOne {
+  from {
+    height: 10px; }
+  to {
+    height: 40px; } }
+
+@keyframes eleTwo {
+  from {
+    height: 40px; }
+  to {
+    height: 10px; } }
+
+@keyframes eleThree {
+  from {
+    height: 10px; }
+  to {
+    height: 40px; } }
